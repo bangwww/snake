@@ -40,7 +40,11 @@ namespace Snake
                     {y+=offset; } break;
             }
         }
-
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
