@@ -10,12 +10,21 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            HorizontalLine hl = new HorizontalLine(0, 20, 1, '*');
+            Console.SetBufferSize(80, 25);
 
-            hl.Drow();
+            HorizontalLine TopLine = new HorizontalLine(0, 78, 0, '+');
+            HorizontalLine BotLine = new HorizontalLine(0, 78, 24, '+');
+            VerticalLine LeftLine = new VerticalLine(0, 24, 0, '+');
+            VerticalLine RightLine = new VerticalLine(0, 24, 78, '+');
 
-            VerticalLine vl = new VerticalLine(1, 20, 0, '*');
-            vl.Drow();
+            TopLine.Drow();
+            BotLine.Drow();
+            LeftLine.Drow();
+            RightLine.Drow();
+
+            Point p = new Point(4, 5, '*');
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Drow();
 
         
          //   p1.Draw();
